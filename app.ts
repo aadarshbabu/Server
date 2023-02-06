@@ -6,7 +6,9 @@ import { logger } from "./Logger/CreateLogger";
 import 'reflect-metadata'
 import User from './Controller/userController/userController';
 dotenv.config({ path: `${process.cwd()}\\.env.${process.env.ENV}` })
+import conn from './Database/dbConfig'; // connection is a function which return a object, and in this object call the method to connect the 'db'
 
+conn().MoongooesConnection()// if you can't pass the connection URI the defalut value is env variable.
 
 const port: any = process.env.PORT || 4000
 

@@ -1,54 +1,75 @@
 # What is Create-express-with-typescript
-  ``Create express with typescript`` is a template That is used to create a quick basic template with a typescript application without any configuration. It's easy to use and does not need to headache to install the multiple dependencies which are required every time when you create a new project structure.
-  You don't need to set up a command and configuration file.
-  
 
+`Create express with typescript` is a template That is used to create a quick basic template with a typescript application without any configuration. It's easy to use and does not need to headache to install the multiple dependencies which are required every time when you create a new project structure.
+You don't need to set up a command and configuration file.
 
 ## Installation
-  If you want to create a basic structure in ``express app with typescript`` You just run only one command on our terminal. But make sure ``Node js`` is already installed in your system. 
-  And also npm version is`` 5.0 `` or later
-  
 
- ## 🚀 Usage
+If you want to create a basic structure in `express app with typescript` You just run only one command on our terminal. But make sure `Node js` is already installed in your system.
+And also npm version is`5.0` or later
 
- Run the below command on the terminal and install the Express application Boilerplate code with all the configurations. 
+## 🚀 Usage
 
- ```bash 
- npx create-express-with-typescript app-name
- ```
- 
- ## How to Start Application.
- If you look up the script section on the package.json file you can get four command `` Start `` ``build`` ``dev`` and ``test`` If you want to start the Server you should run
- 
- ```bash
- npm run start
- ```
-npm run start or `` npm start`` command starts your app.
+Run the below command on the terminal and install the Express application Boilerplate code with all the configurations.
+
+```bash
+npx create-express-with-typescript app-name
+```
+
+## Function Base VS Class Base Express Server.
+
+There are two type of express server 1. Function Base Server 2. Class Base Server. If you want to create a class base server choese the option and hit enter.
+
+## How to Start Function Base Application Server.
+
+If you look up the script section on the package.json file you can get four command `Start` `build` `dev` and `test` If you want to start the Server you should run
+
+```bash
+npm run start
+```
+
+npm run start or ` npm start` command starts your Application Server.
+
+## How to Start Class Base Express Server.
+
+If you look up the script section on the package.json file you can get four command `Start` `build` `dev` and `test` If you want to start the Server you should run
+
+```bash
+npm run start
+```
+
+npm run start or ` npm start` command starts your Application Server.
+
+```bash
+npm run dev
+```
+
+`npm run dev` command is start you Server in devlopment mode. When you start your server in dev command. Changes reflect instantly when you save the file.
 
 ## How to Create a build in Typescript-Express
+
 if you want to create a build in the Typescript-Express application you just run only one command, This command generates a build in the dist directory which is presented in your current working directory.
+
 ```bash
   npm run build
- ```
- ## How to start a server in development Mode
- 
- We are already Handel your development repeatability to ``build``  ``start``  and ``restart`` our server every time. You only need to run one command and start building our application when you save the file application is rebuilt and restarted automatically. 
- ```bash
-  npm run dev
- ```
+```
 
+## How to start a server in development Mode
 
+We are already Handel your development repeatability to `build` `start` and `restart` our server every time. You only need to run one command and start building our application when you save the file application is rebuilt and restarted automatically.
 
+```bash
+ npm run dev
+```
 
 ## Configuration Json File
 
-   * You can change our ``name`` As per your requirement
-   * You can change `` Version `` as well if you have needed
-   * You can remove the ``bin`` command because it's does't need any more when you application successfully generated.
-   * You can also change author name
+- You can change our `name` As per your requirement
+- You can change `Version` as well if you have needed
+- You can remove the `bin` command because it's does't need any more when you application successfully generated.
+- You can also change author name
 
-
- ```json
+```json
 {
   "name": "create-express-with-typescript",
   "version": "1.0.0",
@@ -64,10 +85,7 @@ if you want to create a build in the Typescript-Express application you just run
     "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/app.js\" ",
     "test": "jest"
   },
-  "keywords": [
-    "create-express-app",
-    "express-app-template"
-  ],
+  "keywords": ["create-express-app", "express-app-template"],
   "author": "Aadarsh Singh",
   "license": "ISC",
   "dependencies": {
@@ -87,25 +105,20 @@ if you want to create a build in the Typescript-Express application you just run
     "typescript": "^4.8.4"
   }
 }
-
 ```
- Above some dev dependency as well as dependency some of the dependency is required to run the express application Like `` express `` `` @types/express `` `` nodemode`` ``Typescript `` and  `` @types/node `` So you can't remove these dependency.
- And other dependency you can remove as per your requirement.
- 
- 
- 
- 
- 
- 
+
+Above some dev dependency as well as dependency some of the dependency is required to run the express application Like `express` `@types/express` ` nodemode` `Typescript ` and `@types/node` So you can't remove these dependency.
+And other dependency you can remove as per your requirement.
+
 ## 📝 License
+
 Copyright © 2019 [Aadarsh Singh](https://github.com/aadarshbabu).<br />
 This project is [MIT](https://github.com/codeefi) licensed.
 
-
 ## Author
+
 👤 **Aadarsh Singh**
 
 [Aadarsh Singh](https://codewithsingh.blogspot.com)
 [Github](https://github.com/aadarshbabu)
 [NPM](https://www.npmjs.com/~aadarshsingh)
-

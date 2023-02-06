@@ -3,14 +3,16 @@ import { NextFunction, Request, Response } from "express";
 class Auth {
     private userid:number | undefined
     constructor(){
-        this.userid=0;
+        this.userid;
     }
 
-    public VerifyUser(req:Request, res:Response,next:NextFunction):Boolean {
+    public VerifyUser(req:Request, res:Response,next:NextFunction):any {
         const userid = req.params;
-        console.log(userid)
-        next();
-       return true;
+        if(userid.id)
+            next();
+        else{
+            throw new Error("Invalid User id");
+        }
     } 
 
 

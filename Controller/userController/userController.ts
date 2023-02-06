@@ -10,12 +10,11 @@ class User {
 
     private user;
     constructor(){
-      this.user = new UserService();
+      this.user = new UserService(); // User Service Object.
     }
 
-    @Get("/userId/:id", [auth.VerifyUser])
+    @Get("/userId/:id", [auth.VerifyUser]) // Handler.
     getUser(req:Request, res:Response){
-
       return this.user.getUser(req, res);
     }
     

@@ -20,7 +20,7 @@ let logger: Logger = winston.createLogger({
             level: 'error',
             format: format.combine(
                 format.timestamp({ format: "MM-DD-YYYY HH:mm:ss" }),
-                format.printf(info => `${info.level} ${info.timestapm} ${info.message}`)
+                format.printf(info => `${info.level} ${info.timestamp} ${info.message}`)
             )
         }),
         new winston.transports.Console()

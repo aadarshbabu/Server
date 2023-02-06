@@ -6,7 +6,8 @@ import morgon from 'morgan';
 import MetadataKeys from "../utils/metadata.key";
 import { IRouter } from "../decorators/RouteDecorotor/handler.controller";
 import Controller from "../decorators/RouteDecorotor/controller.docorator";
-
+import { err } from "../Errors/Error";
+import { ErrorRequestHandler } from "express-serve-static-core";
 class ExpressApp {
 
 
@@ -18,6 +19,11 @@ class ExpressApp {
         this.Middleware(middleware);
         this.setupLogger();
         this.setupController(controllers);
+        this.setupErrorHandler(err);
+    }
+    
+    private setupErrorHandler(err:ErrorRequestHandler) {
+        this.app.use(err);
     }
 
     private setupController (controllers:any[]){
@@ -29,7 +35,6 @@ class ExpressApp {
             
             const routers:IRouter[] = Reflect.getMetadata(MetadataKeys.ROUTER, controller);
             const expresRouter = express.Router();
-            console.log(routers);
             routers.forEach(({method, handlerName, handlerPath, middlewares })=>{
                 if(middlewares){
                     expresRouter[method](
@@ -48,21 +53,20 @@ class ExpressApp {
             
                 
             });
-            this.app.use(basePath, expresRouter)
-            console.info(info)
+            this.app.use(basePath, expresRouter);
+            console.table(info);
         }) 
 
 
     }
     
-    // 
-
+    // This middleware is setup for app. So called express Middleware.
     private Middleware(middlewares: any[]) {
         middlewares.forEach(Middleware => {
             this.app.use(Middleware);
         });
     }
-
+    // Satup the Logger middleware. This middleware handle the production as well as        Devlopemnt Env.
     private setupLogger() {
         if (process.env.NODE_ENV !== "production") {
             this.app.use(morgon('combined', {
@@ -75,7 +79,7 @@ class ExpressApp {
         }
     }
 
-
+    // Start initial Function. which return the SIGMA. 
     start(): Server {
         return this.app.listen(this.port, () => {
             logger.info(`App is start on the port ${this.port}`)
